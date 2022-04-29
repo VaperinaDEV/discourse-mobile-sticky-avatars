@@ -1,0 +1,67 @@
+.topic-post {
+  .topic-avatar {
+    .post-avatar {
+      padding: 3px 0;
+      .archetype-private_message & {
+        padding: unset;
+      }
+    }
+  }
+  .topic-body {
+    &.highlighted {
+      animation: none;
+      .contents {
+        animation: background-fade-highlight 2.5s ease-out;
+        .archetype-private_message & {
+          animation: none;
+        }
+      }
+    }
+    .topic-meta-data {
+      padding: 3px 0;
+      .archetype-private_message & {
+        padding: unset;
+      }
+    }
+  }
+  &.sticky-avatar {
+    .topic-avatar {
+      position: sticky;
+      top: var(--header-offset);
+      margin-right: 0;
+      padding-right: 10px;
+      background: var(--secondary);
+      z-index: z('timeline') - 1;
+      .post-avatar {
+        background: var(--secondary);
+        .archetype-private_message & {
+          background: transparent;
+        }
+      }
+      .archetype-private_message & {
+        position: relative;
+        top: auto;
+        background: transparent;
+        padding-right: unset;
+        margin: 0 10px -1em 0;
+        animation: none;
+      }
+    }
+    .topic-body {
+      .topic-meta-data {
+        position: sticky;
+        top: var(--header-offset);
+        height: $topic-avatar-width;
+        z-index: z('timeline') - 1;
+        background: var(--secondary);
+        .archetype-private_message & {
+          position: relative;
+          top: auto;
+          height: auto;
+          padding: unset;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
