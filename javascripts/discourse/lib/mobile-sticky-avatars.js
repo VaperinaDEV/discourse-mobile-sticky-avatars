@@ -88,7 +88,6 @@ export default class StickyAvatarsMobile {
             const postContentHeight = entry.target.querySelector(".contents")
               ?.clientHeight;
             if (
-              this.direction === "⬆️" ||
               postContentHeight > window.innerHeight - headerOffset()
             ) {
               entry.target.classList.add(this.stickyClass);
